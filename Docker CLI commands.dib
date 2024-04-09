@@ -1,0 +1,95 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# Docker CLI commands
+
+#!markdown
+
+## cp
+
+Copies files from host to a container
+
+<span style="color:blue;">docker cp </span>localfilepath\filename.ext containername:/path/to/folder/filename.ext
+
+#!markdown
+
+# rm
+
+Remove container(s) specified.
+
+docker rm $(docker ps -a -q)   // removes all containers. Note -q returns container's id
+
+docker rm container-id -f       // Deletes a container even if it is running
+
+#!markdown
+
+## port
+
+Shows container's exposed ports.
+
+docker port sql2019
+
+#!markdown
+
+## inspect
+
+Shows complete information of an image in a jason-like format.
+
+docker inspect 2489
+
+#!markdown
+
+## version, info, system
+
+These sub-commands show information about the installed docker and do some tasks about the docker system like deleting unused images
+
+docker version
+
+Shows the version information of both client and server side of the docker on your system.
+
+docker info 
+
+Shows information about the docker and also the system on which it is installed.
+
+
+docker system df
+
+Show how much storage is dedicated to docker images and containers
+
+docker system prune -a -f   
+
+Deletes all unused and dangling images forcably.
+
+Note : A dangling image is an image that is not tagged and is not used by any container.
+
+#!markdown
+
+## kill
+
+Kills one or more running container.
+
+docker kill container-id
+
+The exit code would not be 0 if you use "kill" command.
+
+docker kill $(docker ps -q)
+
+Kills all running containers 
+
+#!markdown
+
+## exec
+
+Executes a command in a container
+
+docker exec -it container-id bash   // Execues bash in container
+
+#!markdown
+
+## run
+
+
+Create and run a new container from an image

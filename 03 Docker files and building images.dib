@@ -1,0 +1,58 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# Docker files and building images
+
+#!markdown
+
+## \#
+
+Is the comment character in docker file
+
+#!markdown
+
+## FROM 
+
+    FROM    [image]:[Tag] AS [name]         // is the first command in docker file
+
+#!markdown
+
+## COPY
+
+    COPY src dest                   // copies files from an image to other image
+    COPY --from=image   src dest
+
+    NOTE : THIS COMMAND CREATES AN IMAGE 
+
+#!markdown
+
+## WORKDIR
+
+    WORKDIR [path]          // if the path doesn't exist, this command will create it.
+                            
+    
+    WORKDIR /user/app       // Consecutive WORKDIR commands are related
+    WOKDIR /bin             // This commands sets to /user/app/bin    
+
+#!markdown
+
+## ENV
+
+Sets variables which could be used later in the docker file
+
+has rare application
+
+    ENV PATHDIR /path
+    WORKDIR PATHDIR
+
+#!markdown
+
+## ENTRYPOINT
+
+
+    ENTRYPOINT ["ping", "google.com"]
+
+    NOTE : EACH DOCKERFILE SHOULD HAVE ONLY ONE ENTRYPOIT. IF YOU HAVE MORE, ONLY THE LAST ONE IS CONSIDERED.

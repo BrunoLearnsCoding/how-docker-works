@@ -1,0 +1,13 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!markdown
+
+# Docker concepts
+
+#!markdown
+
+## Volume
+
+To persist data in a container you should add a volume to the container. This volume is a folder on the host which keeps the data you need to persist.
